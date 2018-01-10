@@ -559,7 +559,7 @@ class CsSite2SiteVpn(CsDataBag):
                 file.append(" leftsubnet=%s" % obj['local_guest_cidr'])
                 file.append(" leftnexthop=%s" % obj['local_public_gateway'])
                 file.append(" right=%s" % rightpeer)
-                file.append(" rightsubnet=%s" % peerlist)
+                file.append(" rightsubnet=%s" % subnet)
                 file.append(" type=tunnel")
                 file.append(" authby=secret")
                 file.append(" keyexchange=ikev1")
