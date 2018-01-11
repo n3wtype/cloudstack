@@ -554,7 +554,8 @@ class CsSite2SiteVpn(CsDataBag):
 
         for idx,subnet in enumerate(peerlist.split(',')):
             if idx==0:
-                file.append("#conn for vpn-%s" % rightpeer, 0)
+                file.append("#conn for vpn-%s" % rightpeer)
+                file.append("conn vpn-%s" % rightpeer)
                 file.append(" left=%s" % leftpeer)
                 file.append(" leftsubnet=%s" % obj['local_guest_cidr'])
                 file.append(" leftnexthop=%s" % obj['local_public_gateway'])
@@ -578,7 +579,8 @@ class CsSite2SiteVpn(CsDataBag):
                     file.append(" dpdtimeout=120")
                     file.append(" dpdaction=restart")
             else:
-                file.append("conn ", "conn vpn-%s-%d" % (rightpeer,idx))
+                file.append("")
+                file.append("conn vpn-%s-%d" % (rightpeer,idx))
                 file.append(" also=conn vpn-%s" % rightpeer)
                 file.append(" rightsubnet=%s" % subnet)
 
