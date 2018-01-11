@@ -552,7 +552,7 @@ class CsSite2SiteVpn(CsDataBag):
         file = CsFile(vpnconffile)
         file.repopulate()
 
-        for idx,subnet in peerlist.split(','):
+        for idx,subnet in enumerate(peerlist.split(',')):
             if idx==0:
                 file.append("#conn for vpn-%s" % rightpeer, 0)
                 file.append(" left=%s" % leftpeer)
