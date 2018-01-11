@@ -581,7 +581,7 @@ class CsSite2SiteVpn(CsDataBag):
             else:
                 file.append("")
                 file.append("conn vpn-%s-%d" % (rightpeer,idx))
-                file.append(" also=conn vpn-%s" % rightpeer)
+                file.append(" also=vpn-%s" % rightpeer)
                 file.append(" rightsubnet=%s" % subnet)
 
 
