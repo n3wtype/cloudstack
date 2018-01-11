@@ -19,7 +19,6 @@
 import sys
 import os
 import base64
-import string
 
 from merge import DataBag
 from pprint import pprint
@@ -553,7 +552,7 @@ class CsSite2SiteVpn(CsDataBag):
         file = CsFile(vpnconffile)
         file.repopulate()
 
-        for idx,subnet in string.split (peerlist, ','):
+        for idx,subnet in peerlist.split(','):
             if idx==0:
                 file.append("#conn for vpn-%s" % rightpeer, 0)
                 file.append(" left=%s" % leftpeer)
