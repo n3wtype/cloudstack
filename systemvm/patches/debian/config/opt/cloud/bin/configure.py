@@ -563,14 +563,14 @@ class CsSite2SiteVpn(CsDataBag):
                 file.append(" rightsubnet=%s" % subnet)
                 file.append(" type=tunnel")
                 file.append(" authby=secret")
-                file.append(" keyexchange=ikev1")
+                file.append(" keyexchange=ike")
                 file.append(" ike=%s" % ikepolicy)
                 file.append(" ikelifetime=%s" % self.convert_sec_to_h(obj['ike_lifetime']))
                 file.append(" esp=%s" % esppolicy)
                 file.append(" lifetime=%s" % self.convert_sec_to_h(obj['esp_lifetime']))
                 file.append(" pfs=%s" % pfs)
                 file.append(" keyingtries=2")
-                file.append(" auto=start")
+                file.append(" auto=route")
                 if 'encap' not in obj:
                     obj['encap']=False
                 file.append(" forceencaps=%s" % CsHelper.bool_to_yn(obj['encap']))
